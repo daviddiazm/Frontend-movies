@@ -20,7 +20,7 @@ export const moviesSlice = createSlice({
 
 export const getMoviesThunk = () => (dispatch) => {
     dispatch(genericRequestThunk(async () => {
-        const res = await axios.get('/movies')
+        const res = await axios.get(VITE_API_URL+'/movies')
         dispatch(setMovie(res.data));
     }));
 }
