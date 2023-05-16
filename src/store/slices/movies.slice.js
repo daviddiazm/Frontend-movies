@@ -40,17 +40,17 @@ export const addMovieThunk = movie => dispatch => {
 
 export const deleteMovieThunk = id => dispatch => {
     dispatch(genericRequestThunk(async () => {
-        await axios.delete(`/movies/${id}`)
+        await axios.delete(VITE_API_URL+`/movies/${id}`)
         dispatch(deleteMovie(id));
     }, "Movie deleted successfully"))
 }
 
 export const updateMovieThunk = (id, movie) => dispatch => {
     dispatch(genericRequestThunk(async () => {
-        const {data: movieRes} = await axios.put(`/movies/${id}`, movie)
-        const { data: genres } = await axios.post(`/movies/${id}/genres`, movie.genres);
-        const { data: directors } = await axios.post(`/movies/${id}/directors`, movie.directors);
-        const { data: actors } = await axios.post(`/movies/${id}/actors`, movie.actors);
+        const {data: movieRes} = await axios.put(VITE_API_URL+`/movies/${id}`, movie)
+        const { data: genres } = await axios.post(VITE_API_URL+`/movies/${id}/genres`, movie.genres);
+        const { data: directors } = await axios.post(VITE_API_URL+`/movies/${id}/directors`, movie.directors);
+        const { data: actors } = await axios.post(VITE_API_URL+`/movies/${id}/actors`, movie.actors);
         dispatch(updateMovie({id, movie: {...movieRes, genres, directors, actors}}));
     }, "Movie updated succesfully"));
 }

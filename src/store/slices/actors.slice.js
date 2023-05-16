@@ -28,21 +28,21 @@ export const getActorsThunk = () => (dispatch) => {
 
 export const addActorThunk = actor => dispatch => {
     dispatch(genericRequestThunk(async () => {
-        const res = await axios.post('/actors', actor);
+        const res = await axios.post(VITE_API_URL+'/actors', actor);
         dispatch(addActor(res.data));
     }, "Actor added successfully"))
 }
 
 export const deleteActorThunk = id => dispatch => {
     dispatch(genericRequestThunk(async () => {
-        await axios.delete(`/actors/${id}`)
+        await axios.delete(VITE_API_URL+`/actors/${id}`)
         dispatch(deleteActor(id));
     }, "Actor deleted successfully"))
 }
 
 export const updateActorThunk = (id, actorParams) => dispatch => {
     dispatch(genericRequestThunk(async () => {
-        const {data: actor} = await axios.put(`/actors/${id}`, actorParams)
+        const {data: actor} = await axios.put(VITE_API_URL+`/actors/${id}`, actorParams)
         dispatch(updateActor({id, actor}))
     }, "Actor updated succesfully"));
 }
