@@ -19,7 +19,7 @@ export const actorsSlice = createSlice({
 
 export const getActorsThunk = () => (dispatch) => {
     dispatch(genericRequestThunk(async () => {
-        const res = await axios.get('/actors')
+        const res = await axios.get('https://movies-list-web.onrender.com'+'/actors')
         dispatch(setActors(res.data));
     }));
 }
