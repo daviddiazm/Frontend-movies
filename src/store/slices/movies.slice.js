@@ -2,6 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from '../../utils/axios';
 import { genericRequestThunk } from './app.slice';
 
+const VITE_API_URL='https://movies-list-web.onrender.com';
+
+
 export const moviesSlice = createSlice({
     name: 'movie',
     initialState: [],
