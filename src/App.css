@@ -1,0 +1,119 @@
+*{
+    box-sizing: border-box;
+}
+
+.notification-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 130px;
+    z-index: 99999;
+}
+
+.items-select{
+    overflow-x: auto;
+}
+
+.items-select .form-card-container{
+    position: relative;
+    margin-right: 20px;
+}
+
+.items-select .form-card-container .delete-button{
+    background: #ff0000;
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+}
+
+.items-select .form-card{
+    width: 200px;
+}
+
+.items-select .form-card img{
+    height: 300px;
+    object-fit: contain;
+}
+
+.genres-list{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.genres-list .genres-item{
+    display: flex;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 0;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.genres-list .genres-item .genre-name{
+    padding: 4px 15px;
+    cursor: pointer;
+}
+
+.genres-list .genres-item input{
+    width: 100px;
+    outline: none;
+    border: none;
+    padding: 4px 15px;
+}
+
+.genres-list .genres-item button{
+    border: none;
+}
+
+.empty-image{
+    width: 100%;
+    aspect-ratio: 3/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    position: relative;
+    font-size: 25px;
+    border-radius: 4px;
+}
+
+.empty-image img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-name-input{
+    border: none;
+    font-size: 35px;
+    outline: none;
+    width: 100%;
+    font-weight: 500;
+}
+
+.options-movie-buttons{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.filter-option{ cursor: pointer; }
+.filter-option:hover{ text-decoration: underline; }
+
+.educational-purposes{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
